@@ -1,0 +1,12 @@
+{%extends "Trangchu/Trangchu.html"%}
+{% block title %}Stone_ax | Không gian kĩ thuật{% endblock%}
+{% block content %}
+    <div class="row">
+    {% for list in List %}
+        <div class="col-sm-4">
+        <h4><a href="{{list.Linhvuc_id}}" >{{list.Linhvuc_id}}</a></h4>
+        <img src="{{list.Anh.url}}" class="img-rounded thumbnail" width="400px" height="300px"/>
+        </div>
+    {% endfor %}
+    </div>
+{% endblock%}

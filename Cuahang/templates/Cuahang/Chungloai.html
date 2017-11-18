@@ -1,0 +1,12 @@
+{%extends "Trangchu/Trangchu.html"%}
+{% block title %}Cuahang{% endblock%}
+{% block content %}
+    <div class="row">
+    {% for Chungloai in Chungloais %}
+        <div class="col-sm-4">
+        <h4><a href="{%url 'chungloai'%}{{Chungloai.Chungloai_id}}">{{Chungloai.Chungloai_id}}</a></h4>
+        <img src="{{Chungloai.Anh.url}}" width="400px" height="300px"/>
+        </div>
+    {% endfor %}
+    </div>
+{% endblock%}

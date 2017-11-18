@@ -1,0 +1,12 @@
+{%extends "Trangchu/Trangchu.html"%}
+{% block title %}Stone_ax | Các dự án{% endblock%}
+{% block content %}
+    <div class="row">
+    {% for csp in CSP %}
+        <div class="col-sm-4">
+        <h4><a href="{{csp.Sanpham_id}}" >{{csp.Sanpham_id}}</a></h4>
+        <img src="{{csp.Anh.url}}" class="img-rounded thumbnail" width="400px" height="300px"/>
+        </div>
+    {% endfor %}
+    </div>
+{% endblock%}

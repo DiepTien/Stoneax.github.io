@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+    {% load staticfiles %}
+    <link rel="icon"  href="{% static 'image/favicon.ico'%}">
+    <!--
+    <link rel="apple-touch-icon" sizes="180x180" href="{% static 'image/apple-touch-icon.png'%}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'imagefavicon-16x16.png'%}/">
+    <link rel="manifest" href="{% static 'image/manifest.json'%}">
+    <link rel="mask-icon" href="{% static 'image/safari-pinned-tab.svg'%}" color="#5bbad5">
+    <meta name="theme-color" content="#ffffff">
+    -->
+    <link rel="stylesheet"   href="{% static 'css/bootstrap.min.css' %}" type="text/css">
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{% block title %}{% endblock%}</title>
+    <style>
+        .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-inverse" style="background-color: #9CB09C " >
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a href="{%url 'linhvuc'%}"><img src="{% static 'image/logo4.png'%}"  class="responsive-img" width="200px" height="70px" ></a>
+    </div>
+    <ul class="navbar-nav pager">
+      <li><a href="{%url 'chungloai'%}">CỬA HÀNG </a></li>
+    </ul>
+      {%if user.username%}
+         <ul class="nav navbar-nav pager navbar-right">
+            <li ><a ><span class="glyphicon glyphicon-user"></span>  {{user.username}}</a></li>
+            <li ><a href="{%url 'dangxuat'%}"><span class="glyphicon glyphicon-log-out"></span> Đăng xuất</a></li>
+         </ul>
+      {%else%}
+         <ul class="nav navbar-nav pager navbar-right">
+            <li ><a href="{%url 'dangki'%}"><span class="glyphicon glyphicon-pencil"></span> Đăng kí</a></li>
+            <li ><a href="{%url 'dangnhap'%}"><span class="glyphicon glyphicon-log-in"></span> Đăng nhập</a></li>
+         </ul>
+      {%endif%}
+  </div>
+</nav>
+<div class="jumbotron ">
+   <div class="container-fluid">
+       {% block content %}
+       {% endblock%}
+   </div>
+</div>
+
+</body>
+</html>

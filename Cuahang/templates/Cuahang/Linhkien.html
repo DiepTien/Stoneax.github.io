@@ -1,0 +1,13 @@
+{%extends "Trangchu/Trangchu.html"%}
+{% block title %}Linhkien{% endblock%}
+{% block content %}
+    <div class="row">
+    {% for Linhkien in Linhkiens %}
+        <div class="col-sm-3">
+        <h4><a href="{{ Linhkien.Linhkien_id}}">{{Linhkien.Linhkien_id}}</a></h4>
+        <img src="{{Linhkien.Anh.url}}" width="300px" height="225px"/>
+
+        </div>
+    {% endfor %}
+    </div>
+{% endblock%}

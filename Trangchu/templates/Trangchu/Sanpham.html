@@ -1,0 +1,13 @@
+{%extends "Trangchu/Trangchu.html"%}
+{% block title %}Stone_ax | Các dự án{% endblock%}
+{% block content %}
+    <h3><a>{{Sanpham.Sanpham_id}}</a> </h3>
+    <h6> On {{Sanpham.date}}</h6>
+    <img src="{{Sanpham.Anh.url}}" width="900px" height="600px"/>
+    <h4>Miêu tả</h4>
+    <h5>{{Sanpham.Mieuta}}</h5>
+    <h4>Linh kiện cấu thành</h4>
+    <h5>{{Sanpham.Caukien}}</h5>
+    <h4>File kèm</h4>
+    <h5>{{Sanpham.Filekem}}</h5>
+{% endblock%}
